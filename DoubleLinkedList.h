@@ -11,6 +11,9 @@ class DoubleLinkedList{
 
     void addToHead(Node *node);
     void addToTail(Node *node);
+    void deleteHead();
+    void deleteTail();
+
   private:
     Node<T> *head;
     Node<T> *tail;
