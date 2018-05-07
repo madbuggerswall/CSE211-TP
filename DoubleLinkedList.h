@@ -1,3 +1,6 @@
+#ifndef DOUBLELINKEDLIST_H
+#define DOUBLELINKEDLIST_H
+
 #include "Node.h"
 template<class T>
 class DoubleLinkedList{
@@ -9,8 +12,8 @@ class DoubleLinkedList{
     Node<T>* getHead();
     Node<T>* getTail();
 
-    void addToHead(Node *node);
-    void addToTail(Node *node);
+    void addToHead(Node<T> *node);
+    void addToTail(Node<T> *node);
     void deleteHead();
     void deleteTail();
 
@@ -18,3 +21,4 @@ class DoubleLinkedList{
     Node<T> *head;
     Node<T> *tail;
 };
+#endif

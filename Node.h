@@ -1,19 +1,23 @@
+#ifndef NODE_H
+#define NODE_H
+
 template<class T>
-class Node{
+class Node {
   public:
     Node();
-    Node(const T& object, Node<T> *prev, Node<T> *next);
+    Node(T object, Node *prev, Node *next);
 
     T getObject();
-    Node<T>* getNext();
-    Node<T>* getPrev();
+    Node* getNext();
+    Node* getPrev();
 
-    void setObject(const T& object);
-    void setPrev(Node *prev);
-    void setNext(Node *next);
+    void setObject(T object);
+    void setPrev(Node* prev);
+    void setNext(Node* next);
 
   private:
     T object;
-    Node<T>* next;
-    Node<T>* prev;
+    Node* next;
+    Node* prev;
 };
+#endif

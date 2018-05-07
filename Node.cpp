@@ -1,11 +1,11 @@
 #include "Node.h"
 template<class T>
-Node<T>::Node(){
+Node<T>::Node() {
   next = 0;
   prev = 0;
 }
 template<class T>
-Node<T>::Node(const T& object, Node<T> *prev, Node<T> *next){
+Node<T>::Node(T object, Node *prev, Node *next){
   this->object = object;
   this->prev = prev;
   this->next = next;
@@ -23,7 +23,7 @@ Node<T>* Node<T>::getPrev(){
   return prev;
 }
 template<class T>
-void Node<T>::setObject(const T& object){
+void Node<T>::setObject(T object){
   this->object = object;
 }
 template<class T>

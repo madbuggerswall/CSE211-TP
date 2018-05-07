@@ -2,9 +2,7 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-
-class RandomUtilities{
+class RandomUtilities {
 	public:
 		RandomUtilities();
 		int randomInt(int min, int max);
@@ -12,14 +10,13 @@ class RandomUtilities{
 };
 
 RandomUtilities::RandomUtilities(){
-	srand(time(NULL));
+	std::srand(time(NULL));
 }
 
 int RandomUtilities::randomInt(int min, int max){
-	return rand() % (max+1) + min;
+	return std::rand() % (max+1) + min;
 }
 
 bool RandomUtilities::randomBool(){
 	return randomInt(0,1);
 }
-

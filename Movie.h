@@ -1,22 +1,27 @@
-class Movie{
-  public:
-    Movie(string title);
-    Movie(string title, int year);
+#ifndef MOVIE_H
+#define MOVIE_H
 
-    string getTitle();
-    string getTagline();
+#include <string>
+class Movie {
+  public:
+    Movie(std::string title);
+    Movie(std::string title, int year);
+
+    std::string getTitle();
+    std::string getTagline();
     int getYear();
     int getRuntime();
 
-    void setTitle(string title);
-    void setTagline(string tagline);
+    void setTitle(std::string title);
+    void setTagline(std::string tagline);
     void setYear(int year);
     void setRuntime(int runtime);
 
   private:
-    string title;
-    string tagline;
+    std::string title;
+    std::string tagline;
 
-    int year
+    int year;
     int runtime;
-}
+};
+#endif

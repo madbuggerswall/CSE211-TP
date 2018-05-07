@@ -1,23 +1,19 @@
 #include "Movie.h"
-Movie::Movie(string title){
+Movie::Movie(std::string title) {
   this->title = title;
 }
 
-Movie::Movie(string title, int year){
+Movie::Movie(std::string title, int year){
   this->title = title;
   this->year = year;
 }
 
-string Movie::getTitle(){
+std::string Movie::getTitle(){
   return this->title;
 }
 
-string Movie::getTagline(){
+std::string Movie::getTagline(){
   return this->tagline;
-}
-
-string Movie::getOverview(){
-  return this->overview;
 }
 
 int Movie::getYear(){
@@ -26,4 +22,18 @@ int Movie::getYear(){
 
 int Movie::getRuntime(){
   return this->runtime;
+}
+
+void Movie::setTitle(std::string title){
+  this->title = title;
+}
+
+void Movie::setTagline(std::string tagline){
+  this->tagline = tagline;
+}
+void Movie::setYear(int year){
+  this->year = year;
+}
+void Movie::setRuntime(int runtime){
+  this->runtime = runtime;
 }
