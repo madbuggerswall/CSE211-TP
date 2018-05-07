@@ -21,4 +21,5 @@ class DoubleLinkedList{
     Node<T> *head;
     Node<T> *tail;
 };
+#include "DoubleLinkedList.cpp"
 #endif

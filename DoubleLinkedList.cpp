@@ -1,4 +1,3 @@
-#include "DoubleLinkedList.h"
 template<class T>
 DoubleLinkedList<T>::DoubleLinkedList(){
   head = 0;
