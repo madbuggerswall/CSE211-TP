@@ -1,4 +1,6 @@
 #include "Movie.h"
+Movie::Movie(){}
+
 Movie::Movie(std::string title) {
   this->title = title;
 }

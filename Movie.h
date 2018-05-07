@@ -4,6 +4,7 @@
 #include <string>
 class Movie {
   public:
+    Movie();
     Movie(std::string title);
     Movie(std::string title, int year);
 
