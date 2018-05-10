@@ -10,7 +10,7 @@ int DoubleLinkedList<T>::getSize(){
     return size;
   }else{
     Node<T>* node = head;
-    while (node->getNext() != NULL) {
+    while (node != NULL) {
       size++;
       node = node->getNext();
     }
