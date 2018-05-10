@@ -6,10 +6,16 @@ DoubleLinkedList<T>::DoubleLinkedList(){
 template<class T>
 int DoubleLinkedList<T>::getSize(){
   int size = 0;
-  for (Node<T> node; node != tail; node = node->next) {
-    size++;
+  if(head == NULL && tail == NULL){
+    return size;
+  }else{
+    Node<T>* node = head;
+    while (node->getNext() != NULL) {
+      size++;
+      node = node->getNext();
+    }
+    return size;
   }
-  return size;
 }
 template<class T>
 bool DoubleLinkedList<T>::isEmpty(){
@@ -29,7 +35,7 @@ Node<T>* DoubleLinkedList<T>::getTail(){
 template<class T>
 void DoubleLinkedList<T>::addToHead(Node<T> *node){
   if(head != NULL){
-    node->next = head;
+    node->setNext(head);
     head = node;
   }else{
     head = tail = node;
@@ -37,8 +43,12 @@ void DoubleLinkedList<T>::addToHead(Node<T> *node){
 }
 template<class T>
 void DoubleLinkedList<T>::addToTail(Node<T> *node){
-  tail->next = node;
-  tail = node;
+  if(tail != 0){
+    tail->setNext(node);
+    tail = tail->getNext();
+  } else {
+    head = tail = node;
+  }
 }
 template<class T>
 void DoubleLinkedList<T>::deleteHead(){

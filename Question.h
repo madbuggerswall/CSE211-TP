@@ -5,7 +5,7 @@ class Question {
 	public:
 		Question();
 		Question(Movie movie);
-		Question(Movie movie, bool isAskingYear);
+		Question(Movie movie, bool askYear);
 
 		Movie getMovie();
 		string[] getOptions;
@@ -16,6 +16,6 @@ class Question {
 	private:
 		Movie movie;
 		string[4] options;
-		bool isAskingYear;
+		bool askYear;
 };
 #endif
