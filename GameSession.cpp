@@ -1,11 +1,11 @@
 #include "GameSession.h"
 
-GameSession::GameSession(DoubleLinkedList<Movie>* movies){
+GameSession::GameSession(LinkedList<Movie>* movies){
   initQuestionIndices();
   initQuestions(movies);
 }
 
-DoubleLinkedList<Question> GameSession::getQuestions(){
+LinkedList<Question> GameSession::getQuestions(){
   return this->questions;
 }
 
@@ -20,14 +20,14 @@ void GameSession::initQuestionIndices(){
   }
 }
 
-void GameSession::initQuestions(DoubleLinkedList<Movie>* movies){
+void GameSession::initQuestions(LinkedList<Movie>* movies){
   RandomUtilities randomUtilities;
   Node<int> *node = questionIndices.getHead();
 
   while (node != NULL) {
     Movie movie = movies->getIndex(node->getObject())->getObject();
     bool random = randomUtilities.randomBool();
-    Question question(movie, random);
+    Question question(movie, random, movies);
     questions.addToTail(question);
     node=node->getNext();
   }

@@ -1,11 +1,11 @@
-#ifndef DOUBLELINKEDLIST_H
-#define DOUBLELINKEDLIST_H
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 
 #include "Node.h"
 template<class T>
-class DoubleLinkedList{
+class LinkedList{
   public:
-    DoubleLinkedList();
+    LinkedList();
     int getSize();
     bool isEmpty();
     bool contains(T object);
@@ -23,5 +23,5 @@ class DoubleLinkedList{
     Node<T> *head;
     Node<T> *tail;
 };
-#include "DoubleLinkedList.cpp"
+#include "LinkedList.cpp"
 #endif

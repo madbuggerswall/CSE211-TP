@@ -2,19 +2,21 @@
 #include <string>
 #include <fstream>
 #include "Movie.h"
-#include "DoubleLinkedList.h"
+#include "LinkedList.h"
 #include "FileUtilities.h"
 #include "GameSession.h"
 
 using namespace std;
 
 int main() {
-  DoubleLinkedList<Movie> *allMovies = new DoubleLinkedList<Movie>();
+  LinkedList<Movie> *allMovies = new LinkedList<Movie>();
   FileUtilities::initMovies(allMovies);
   FileUtilities::initDates(allMovies);
 
   GameSession gameSession(allMovies);
-  
+  gameSession.questions.getHead()->getObject().printQuestion();
+  gameSession.questions.getHead()->getObject().printOptions();
+
   // cout << "Is Empty? : " << allMovies->isEmpty() << endl;
   // int size = allMovies->getSize();
   // cout << "Size: " << size << endl;

@@ -1,10 +1,10 @@
 template<class T>
-DoubleLinkedList<T>::DoubleLinkedList(){
+LinkedList<T>::LinkedList(){
   head = 0;
   tail = 0;
 }
 template<class T>
-int DoubleLinkedList<T>::getSize(){
+int LinkedList<T>::getSize(){
   int size = 0;
   if(head == NULL && tail == NULL){
     return size;
@@ -18,14 +18,14 @@ int DoubleLinkedList<T>::getSize(){
   }
 }
 template<class T>
-bool DoubleLinkedList<T>::isEmpty(){
+bool LinkedList<T>::isEmpty(){
   if(head == 0 && tail == 0)
     return true;
   else
     return false;
 }
 template<class T>
-bool DoubleLinkedList<T>::contains(T object){
+bool LinkedList<T>::contains(T object){
   bool result = false;
   if(head == NULL && tail == NULL){
     return result;
@@ -42,15 +42,15 @@ bool DoubleLinkedList<T>::contains(T object){
   }
 }
 template<class T>
-Node<T>* DoubleLinkedList<T>::getHead(){
+Node<T>* LinkedList<T>::getHead(){
   return head;
 }
 template<class T>
-Node<T>* DoubleLinkedList<T>::getTail(){
+Node<T>* LinkedList<T>::getTail(){
   return tail;
 }
 template<class T>
-Node<T>* DoubleLinkedList<T>::getIndex(int index){
+Node<T>* LinkedList<T>::getIndex(int index){
   Node<T>* node = head;
   if(index < getSize()){
     for(int i=0; i<index; i++){
@@ -62,7 +62,7 @@ Node<T>* DoubleLinkedList<T>::getIndex(int index){
   }
 }
 template<class T>
-void DoubleLinkedList<T>::addToHead(Node<T> *node){
+void LinkedList<T>::addToHead(Node<T> *node){
   if(head != NULL){
     node->setNext(head);
     head = node;
@@ -71,7 +71,7 @@ void DoubleLinkedList<T>::addToHead(Node<T> *node){
   }
 }
 template<class T>
-void DoubleLinkedList<T>::addToHead(T& object){
+void LinkedList<T>::addToHead(T& object){
   Node<T>* node = new Node<T>(object);
   if(head != NULL){
     node->setNext(head);
@@ -81,7 +81,7 @@ void DoubleLinkedList<T>::addToHead(T& object){
   }
 }
 template<class T>
-void DoubleLinkedList<T>::addToTail(Node<T> *node){
+void LinkedList<T>::addToTail(Node<T> *node){
   if(tail != 0){
     tail->setNext(node);
     tail = tail->getNext();
@@ -90,7 +90,7 @@ void DoubleLinkedList<T>::addToTail(Node<T> *node){
   }
 }
 template<class T>
-void DoubleLinkedList<T>::addToTail(T& object){
+void LinkedList<T>::addToTail(T& object){
   Node<T>* node = new Node<T>(object);
   if(tail != 0){
     tail->setNext(node);
@@ -100,10 +100,10 @@ void DoubleLinkedList<T>::addToTail(T& object){
   }
 }
 template<class T>
-void DoubleLinkedList<T>::deleteHead(){
+void LinkedList<T>::deleteHead(){
 
 }
 template<class T>
-void DoubleLinkedList<T>::deleteTail(){
+void LinkedList<T>::deleteTail(){
 
 }

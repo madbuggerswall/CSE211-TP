@@ -4,24 +4,27 @@
 #include <string>
 #include <vector>
 #include "Movie.h"
+#include "RandomUtilities.h"
+#include "LinkedList.h"
 
 class Question {
 	public:
 		Question();
 		Question(Movie movie);
-		Question(Movie movie, bool askYear);
+		Question(Movie movie, bool askYear, LinkedList<Movie>* movies);
 
 		Movie getMovie();
-		std::vector<std::string> getOptions();
+		LinkedList<std::string>* getOptions();
 
-		void printQuestion(bool askYear);
-		void printOptions(bool askYear);
+		void printQuestion();
+		void printOptions();
 		void setMovie(Movie movie);
-		void setOptions(std::vector<std::string> options);
+		void setOptions(LinkedList<std::string>* options);
 	private:
 		Movie movie;
-		std::vector<std::string> options;
 		bool askYear;
+		LinkedList<std::string>* options;
 		std::vector<char> letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+		void initOptions(LinkedList<Movie>* movies);
 };
 #endif

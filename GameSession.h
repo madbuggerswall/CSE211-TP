@@ -3,13 +3,14 @@
 
 #include <vector>
 #include "Question.h"
-#include "DoubleLinkedList.h"
+#include "LinkedList.h"
 #include "RandomUtilities.h"
 
 class GameSession {
   public:
-    GameSession(DoubleLinkedList<Movie>* movies);
-    DoubleLinkedList<Question> getQuestions();
+    GameSession(LinkedList<Movie>* movies);
+    LinkedList<Question> getQuestions();
+    LinkedList<Question> questions;
     void printScore();
   private:
     int score;
@@ -17,10 +18,9 @@ class GameSession {
     int wrongPoints = 5;
     int numberOfQuestions = 10;
     int numberOfMovies = 2000;
-    DoubleLinkedList<int> questionIndices;
-    DoubleLinkedList<Question> questions;
+    LinkedList<int> questionIndices;
 
     void initQuestionIndices();
-    void initQuestions(DoubleLinkedList<Movie>* movies);
+    void initQuestions(LinkedList<Movie>* movies);
 };
 #endif

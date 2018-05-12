@@ -6,11 +6,11 @@
 
 class FileUtilities{
   public:
-    static void initMovies(DoubleLinkedList<Movie> *allMovies);
-    static void initDates(DoubleLinkedList<Movie> *allMovies);
+    static void initMovies(LinkedList<Movie> *allMovies);
+    static void initDates(LinkedList<Movie> *allMovies);
 };
 
-void FileUtilities::initMovies(DoubleLinkedList<Movie> *allMovies){
+void FileUtilities::initMovies(LinkedList<Movie> *allMovies){
   std::fstream titlesFile;
   std::string title;
   titlesFile.open("DataFiles/movie_titles_2k.txt");
@@ -22,7 +22,7 @@ void FileUtilities::initMovies(DoubleLinkedList<Movie> *allMovies){
   titlesFile.close();
 }
 
-void FileUtilities::initDates(DoubleLinkedList<Movie> *allMovies){
+void FileUtilities::initDates(LinkedList<Movie> *allMovies){
   std::fstream datesFile;
   std::string year;
   Node<Movie> *node = allMovies->getHead();
