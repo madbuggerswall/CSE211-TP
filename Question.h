@@ -27,6 +27,10 @@ class Question {
 		bool askYear;
 		LinkedList<std::string>* options;
 		std::vector<char> letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+
+		void setCorrectOption(int index);
 		void initOptions(LinkedList<Movie>* movies);
+		void initYearOptions(LinkedList<Movie>* movies);
+		void initTitleOptions(LinkedList<Movie>* movies);
 };
 #endif

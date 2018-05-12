@@ -44,37 +44,45 @@ void Question::setOptions(LinkedList<std::string>* options){
 }
 
 void Question::initOptions(LinkedList<Movie>* movies){
-  RandomUtilities randomUtilities;
   if(askYear){
-    int correctIndex = randomUtilities.randomInt(0,3);
-    int falseYear;
-    for(int i=0; i<numberOfOptions; i++){
-      if(i == correctIndex){
-        std::string trueYear = std::to_string(movie.getYear()) ;
-        options->addToTail(trueYear);
-      }else{
-        do {
-          falseYear = randomUtilities.randomInt(1927, 2016);
-        } while(options->contains(std::to_string(falseYear)));
-        std::string falseYearText = std::to_string(falseYear);
-        options->addToTail(falseYearText);
-      }
-    }
+    initYearOptions(movies);
   }else{
-    int correctIndex = randomUtilities.randomInt(0,3);
-    int falseIndex;
-    std::string falseTitle;
-    for(int i=0; i<numberOfOptions; i++){
-      if(i == correctIndex){
-        std::string trueTitle = movie.getTitle();
-        options->addToTail(trueTitle);
-      }else{
-        do {
-          falseIndex = randomUtilities.randomInt(0,2000);
-          falseTitle = movies->getIndex(falseIndex)->getObject().getTitle();
-        } while(options->contains(falseTitle));
-        options->addToTail(falseTitle);
-      }
+    initTitleOptions(movies);
+  }
+}
+void Question::initYearOptions(LinkedList<Movie>* movies){
+  RandomUtilities randomUtilities;
+  int correctIndex = randomUtilities.randomInt(0,3);
+  int falseYear;
+  for(int i=0; i<numberOfOptions; i++){
+    if(i == correctIndex){
+      std::string trueYear = std::to_string(movie.getYear()) ;
+      options->addToTail(trueYear);
+    }else{
+      do {
+        falseYear = randomUtilities.randomInt(1927, 2016);
+      } while(options->contains(std::to_string(falseYear)));
+      std::string falseYearText = std::to_string(falseYear);
+      options->addToTail(falseYearText);
+    }
+  }
+}
+
+void Question::initTitleOptions(LinkedList<Movie>* movies){
+  RandomUtilities randomUtilities;
+  int correctIndex = randomUtilities.randomInt(0,3);
+  int falseIndex;
+  std::string falseTitle;
+  for(int i=0; i<numberOfOptions; i++){
+    if(i == correctIndex){
+      std::string trueTitle = movie.getTitle();
+      options->addToTail(trueTitle);
+    }else{
+      do {
+        falseIndex = randomUtilities.randomInt(0,2000);
+        falseTitle = movies->getIndex(falseIndex)->getObject().getTitle();
+      } while(options->contains(falseTitle));
+      options->addToTail(falseTitle);
     }
   }
 }

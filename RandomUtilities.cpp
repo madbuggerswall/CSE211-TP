@@ -4,7 +4,8 @@ RandomUtilities::RandomUtilities(){
 }
 
 int RandomUtilities::randomInt(int min, int max){
-	return std::rand() % (max+1) + min;
+	int result = std::rand() % (max-min+1) + min;
+	return result;
 }
 
 bool RandomUtilities::randomBool(){
