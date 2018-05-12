@@ -13,20 +13,20 @@ class Question {
 		Question(Movie movie);
 		Question(Movie movie, bool askYear, LinkedList<Movie>* movies);
 
+		std::string getCorrectOption();
 		Movie getMovie();
 		LinkedList<std::string>* getOptions();
 
 		void printQuestion();
 		void printOptions();
 		void setMovie(Movie movie);
-		void setOptions(LinkedList<std::string>* options);
 	private:
 		int numberOfOptions = 4;
 		std::string correctOption;
 		Movie movie;
 		bool askYear;
 		LinkedList<std::string>* options;
-		std::vector<char> letters = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
+		std::vector<char> letters = {'a', 'b', 'c', 'd'};
 
 		void setCorrectOption(int index);
 		void initOptions(LinkedList<Movie>* movies);

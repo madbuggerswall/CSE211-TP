@@ -2,22 +2,31 @@
 Question::Question() {
   options = new LinkedList<std::string>();
 }
+
 Question::Question(Movie movie){
   this->movie = movie;
   options = new LinkedList<std::string>();
 }
+
 Question::Question(Movie movie, bool askYear, LinkedList<Movie>* movies){
   this->movie = movie;
   this->askYear = askYear;
   options = new LinkedList<std::string>();
   initOptions(movies);
 }
+
+std::string Question::getCorrectOption(){
+  return this->correctOption;
+}
+
 Movie Question::getMovie(){
   return this->movie;
 }
+
 LinkedList<std::string>* Question::getOptions(){
   return this->options;
 }
+
 void Question::printQuestion(){
   if(askYear){
     std::cout << "Which year was the movie " << movie.getTitle();
@@ -39,8 +48,25 @@ void Question::printOptions(){
 void Question::setMovie(Movie movie){
   this->movie = movie;
 }
-void Question::setOptions(LinkedList<std::string>* options){
-  this->options = options;
+
+void Question::setCorrectOption(int index){
+  switch (index) {
+    case 0:
+      correctOption = "a";
+      break;
+    case 1:
+      correctOption = "b";
+      break;
+    case 2:
+      correctOption = "c";
+      break;
+    case 3:
+      correctOption = "d";
+      break;
+    default:
+      correctOption = "";
+      break;
+  }
 }
 
 void Question::initOptions(LinkedList<Movie>* movies){
@@ -50,9 +76,11 @@ void Question::initOptions(LinkedList<Movie>* movies){
     initTitleOptions(movies);
   }
 }
+
 void Question::initYearOptions(LinkedList<Movie>* movies){
-  RandomUtilities randomUtilities;
+  RandomUtilities randomUtilities(false);
   int correctIndex = randomUtilities.randomInt(0,3);
+  setCorrectOption(correctIndex);
   int falseYear;
   for(int i=0; i<numberOfOptions; i++){
     if(i == correctIndex){
@@ -69,8 +97,9 @@ void Question::initYearOptions(LinkedList<Movie>* movies){
 }
 
 void Question::initTitleOptions(LinkedList<Movie>* movies){
-  RandomUtilities randomUtilities;
+  RandomUtilities randomUtilities(false);
   int correctIndex = randomUtilities.randomInt(0,3);
+  setCorrectOption(correctIndex);
   int falseIndex;
   std::string falseTitle;
   for(int i=0; i<numberOfOptions; i++){

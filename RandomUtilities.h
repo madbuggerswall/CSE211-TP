@@ -7,6 +7,7 @@
 class RandomUtilities {
 	public:
 		RandomUtilities();
+		RandomUtilities(bool hasSeed);
 		int randomInt(int min, int max);
 		bool randomBool();
 };

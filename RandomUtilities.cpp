@@ -3,6 +3,10 @@ RandomUtilities::RandomUtilities(){
 	std::srand(time(NULL));
 }
 
+RandomUtilities::RandomUtilities(bool hasSeed){
+
+}
+
 int RandomUtilities::randomInt(int min, int max){
 	int result = std::rand() % (max-min+1) + min;
 	return result;
