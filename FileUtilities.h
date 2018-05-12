@@ -1,3 +1,6 @@
+#ifndef FILEUTILITIES_H
+#define FILEUTILITIES_H
+
 #include <fstream>
 #include <string>
 
@@ -30,3 +33,4 @@ void FileUtilities::initDates(DoubleLinkedList<Movie> *allMovies){
   }
   datesFile.close();
 }
+#endif

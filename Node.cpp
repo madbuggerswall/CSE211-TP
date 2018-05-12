@@ -1,6 +1,11 @@
 template<class T>
 Node<T>::Node() {
-  next = NULL;
+  this->next = NULL;
+}
+template<class T>
+Node<T>::Node(T& object){
+  this->object = object;
+  this->next = NULL;
 }
 template<class T>
 Node<T>::Node(T& object, Node *next){

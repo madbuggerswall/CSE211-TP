@@ -5,6 +5,7 @@ template<class T>
 class Node {
   public:
     Node();
+    Node(T& object);
     Node(T& object,  Node *next);
 
     T& getObject();
