@@ -5,7 +5,6 @@
 class GameSession {
   public:
     GameSession();
-
   private:
     int score;
     int numberOfQuestions;

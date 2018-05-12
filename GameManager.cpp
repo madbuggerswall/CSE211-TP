@@ -7,10 +7,6 @@
 using namespace std;
 
 int main() {
-  // Movie movie("Godfather", 1972);
-  // Node<Movie> *node = new Node<Movie>(movie, NULL);
-  // cout << node->getObject().getTitle() << endl;
-
   DoubleLinkedList<Movie> *allMovies = new DoubleLinkedList<Movie>();
   FileUtilities::initMovies(allMovies);
   FileUtilities::initDates(allMovies);

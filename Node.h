@@ -5,12 +5,12 @@ template<class T>
 class Node {
   public:
     Node();
-    Node(T object,  Node *next);
+    Node(T& object,  Node *next);
 
-    T getObject();
+    T& getObject();
     Node* getNext();
 
-    void setObject(T object);
+    void setObject(T& object);
     void setNext(Node* next);
 
   private:

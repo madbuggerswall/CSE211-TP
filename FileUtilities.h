@@ -25,8 +25,7 @@ void FileUtilities::initDates(DoubleLinkedList<Movie> *allMovies){
   Node<Movie> *node = allMovies->getHead();
   datesFile.open("DataFiles/movie_dates_2k.txt");
   while(getline(datesFile, year)){
-    node->getObject().setYear(200);
-    std::cout << node->getObject().getTitle() << std::endl;
+    node->getObject().setYear(std::stoi(year));
     node = node->getNext();
   }
   datesFile.close();
