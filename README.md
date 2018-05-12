@@ -7,7 +7,8 @@
   * _Which year was the Pulp Fiction released?_
   * _Which of the following movies was released in 2014?_
 * Movie data is a modified version of [**TMDB 5000 Movie Dataset**][tmdb]
-[tmdb]: (https://www.kaggle.com/tmdb/tmdb-movie-metadata)
+
+[tmdb]: https://www.kaggle.com/tmdb/tmdb-movie-metadata
 
 > I sorted the [movies][tmdb] by their `popularity` and get the first 2000 movie with a little `python` script. **Titles** and **years** of the movies are stored in **separate files** because I wanted to avoid parsing.
 
