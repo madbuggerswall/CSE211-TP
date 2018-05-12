@@ -30,7 +30,6 @@ void Question::printQuestion(){
 }
 
 void Question::printOptions(){
-  std::cout << "poptions():"<< options->getSize() << std::endl;
   for(int i = 0; i<options->getSize(); i++){
     std::cout << letters.at(i) << ") " << options->getIndex(i)->getObject();
     std::cout << std::endl;
@@ -49,7 +48,7 @@ void Question::initOptions(LinkedList<Movie>* movies){
   if(askYear){
     int correctIndex = randomUtilities.randomInt(0,3);
     int falseYear;
-    for(int i=0; i<options->getSize(); i++){
+    for(int i=0; i<numberOfOptions; i++){
       if(i == correctIndex){
         std::string trueYear = std::to_string(movie.getYear()) ;
         options->addToTail(trueYear);
@@ -65,7 +64,7 @@ void Question::initOptions(LinkedList<Movie>* movies){
     int correctIndex = randomUtilities.randomInt(0,3);
     int falseIndex;
     std::string falseTitle;
-    for(int i=0; i<options->getSize(); i++){
+    for(int i=0; i<numberOfOptions; i++){
       if(i == correctIndex){
         std::string trueTitle = movie.getTitle();
         options->addToTail(trueTitle);

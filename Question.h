@@ -21,6 +21,8 @@ class Question {
 		void setMovie(Movie movie);
 		void setOptions(LinkedList<std::string>* options);
 	private:
+		int numberOfOptions = 4;
+		std::string correctOption;
 		Movie movie;
 		bool askYear;
 		LinkedList<std::string>* options;

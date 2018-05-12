@@ -16,6 +16,22 @@ int main() {
   GameSession gameSession(allMovies);
   gameSession.questions.getHead()->getObject().printQuestion();
   gameSession.questions.getHead()->getObject().printOptions();
+  string answer;
+
+  while(answer != "q"){
+    cin >> answer;
+    if(answer == "a"){
+      cout << "Could be" << endl;
+    }else if(answer == "b"){
+      cout << "Could be" << endl;
+    }else if(answer == "c"){
+      cout << "Could be"<< endl;
+    }else if(answer == "d"){
+      cout << "Could be" << endl;
+    }else{
+      cout << "Wrong key" << endl;
+    }
+  }
 
   // cout << "Is Empty? : " << allMovies->isEmpty() << endl;
   // int size = allMovies->getSize();
